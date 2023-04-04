@@ -1,0 +1,76 @@
+/* Hide default HTML checkbox */
+.checkboxPrice {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+.step2 .priceMonthly,
+.step2 .priceYearly {
+  transition: all 200ms;
+}
+/* The switch - the box around the slider */
+.step2 .container {
+  width: 51px;
+  height: 25px;
+  position: relative;
+}
+.step2 .container .switch {
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: hsl(213, 96%, 18%);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+}
+/* The slider */
+.step2 .container .slider {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+
+  top: 11%;
+  left: 5%;
+  border-radius: 50%;
+  background: hsl(217, 100%, 97%);
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.15), 0px 3px 1px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+}
+.checkboxPrice:checked ~ .step2 .masterContainer .yearly {
+  color: hsl(213, 96%, 18%);
+}
+.checkboxPrice:checked ~ .step2 .masterContainer .monthly {
+  color: hsl(240, 3%, 65%);
+}
+.checkboxPrice:checked ~ .step2 .masterContainer .slider {
+  left: 55%;
+}
+.priceYearly {
+  display: none;
+}
+.offerYearly {
+  opacity: 0%;
+  transition: all 200ms;
+}
+.checkboxPrice:checked ~ .step2 ul .priceYearly {
+  display: block;
+}
+.checkboxPrice:checked ~ .step2 ul .priceMonthly {
+  display: none;
+}
+.checkboxPrice:checked ~ .step2 ul li {
+  align-items: start;
+  padding: 1rem;
+}
+.checkboxPrice:checked ~ .step2 ul .offerYearly {
+  opacity: 100%;
+  order: 4;
+}
+.checkboxPrice:checked ~ .step3 ul .priceYearly {
+  display: block;
+}
+.checkboxPrice:checked ~ .step3 ul .priceMonthly {
+  display: none;
+}
